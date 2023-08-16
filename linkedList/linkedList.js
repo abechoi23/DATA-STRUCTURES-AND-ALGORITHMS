@@ -51,6 +51,8 @@ class LinkedList {
     }
     return
   }
+
+  // retrieve & contain ^^^ after finishing delete
 }
 
 
