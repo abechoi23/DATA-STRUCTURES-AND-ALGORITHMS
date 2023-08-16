@@ -1,30 +1,8 @@
 /* Map exercises
 
-5. string lengths
-// Example Input: ['Hello', 'World', 'JavaScript']
-// Expected Output: [5, 5, 10] */
-
-/* ForEach exercises
-
-Rating Average
-// Example Input:
-// [
-//   { title: 'Inception', rating: 5 },
-//   { title: 'Frozen', rating: 4.5 },
-//   { title: 'Star Wars', rating: 4 }
-// ]
-// Expected Output: Average Rating is 4.5
-
-2. Count occurences
-// Example Input: ['apple', 'banana', 'apple', 'cherry', 'apple', 'banana']
-// Expected Output: { apple: 3, banana: 2, cherry: 1 }
-3. Convert to uppercase
-// Example Input: ['apple', 'banana', 'cherry']
-// After execution, the original array should be: ['APPLE', 'BANANA', 'CHERRY'] */
-
-// Double numbers given array of numbers double numbers
-// Example Input: [1, 2, 3, 4]
-// Expected Output: [2, 4, 6, 8]
+Double numbers given array of numbers double numbers
+Example Input: [1, 2, 3, 4]
+Expected Output: [2, 4, 6, 8] */
 
 const numbers = [1, 2, 3, 4];
 
@@ -35,29 +13,29 @@ const numberResults = numbers.map(function (value) {
 
 console.log(numberResults);
 
-// capitalize words
-// Example Input: ['apple', 'banana', 'cherry']
-// Expected Output: ['Apple', 'Banana', 'Cherry']
+/* capitalize words
+Example Input: ['apple', 'banana', 'cherry']
+Expected Output: ['Apple', 'Banana', 'Cherry'] */
 
 const arr = ["apple", "banana", "cherry"];
 
 const arrResults = arr.map(function (value) {
-  // const upperCase = value.charAt(0).toUpperCase()
-  // const remainingLetters = value.slice(1)
-  // const results = upperCase + remainingLetters
+  /* const upperCase = value.charAt(0).toUpperCase()
+  const remainingLetters = value.slice(1)
+  const results = upperCase + remainingLetters */
   const results = value.charAt(0).toUpperCase() + value.slice(1);
   return results;
 });
 
 console.log(arrResults);
 
-// give full names
-// Example Input:
-// [
-//   { firstName: 'John', lastName: 'Doe' },
-//   { firstName: 'Jane', lastName: 'Smith' }
-// ]
-// Expected Output: ['John Doe', 'Jane Smith']
+/* give full names
+Example Input:
+[
+  { firstName: 'John', lastName: 'Doe' },
+  { firstName: 'Jane', lastName: 'Smith' }
+]
+Expected Output: ['John Doe', 'Jane Smith'] */
 
 const fullName = [
   { firstName: "John", lastName: "Doe" },
@@ -70,17 +48,17 @@ const Name = fullName.map((user) => {
 
 console.log(Name);
 
-// add property
-// Example Input:
-// [
-//   { name: 'book', price: 100 },
-//   { name: 'game', price: 50 }
-// ]
-// Expected Output:
-// [
-//   { name: 'book', price: 100, taxedPrice: 110 },
-//   { name: 'game', price: 50, taxedPrice: 55 }
-// ]
+/* add property
+Example Input:
+[
+  { name: 'book', price: 100 },
+  { name: 'game', price: 50 }
+]
+Expected Output:
+[
+  { name: 'book', price: 100, taxedPrice: 110 },
+  { name: 'game', price: 50, taxedPrice: 55 }
+] */
 
 const barnesNoble = [
   { name: "book", price: 100 },
@@ -97,13 +75,72 @@ const bookPrices = barnesNoble.map((value) => {
 
 console.log(bookPrices);
 
-// string lengths
-// Example Input: ['Hello', 'World', 'JavaScript']
-// Expected Output: [5, 5, 10] */
+/* string lengths
+Example Input: ['Hello', 'World', 'JavaScript']
+Expected Output: [5, 5, 10]  */
 
 const arr1 = ["Hello", "World", "JavaScript"];
 
 const arr1Length = arr1.map((value) => {
+  return value.length;
+});
 
+console.log(arr1Length);
+
+/* ForEach exercises
+
+Rating Average
+Example Input:
+[
+  { title: 'Inception', rating: 5 },
+  { title: 'Frozen', rating: 4.5 },
+  { title: 'Star Wars', rating: 4 }
+]
+Expected Output: Average Rating is 4.5 */
+
+const ratingAverage = [
+  { title: "Inception", rating: 5 },
+  { title: "Frozen", rating: 4.5 },
+  { title: "Star Wars", rating: 4 },
+];
+
+let totalRating = 0;
+
+ratingAverage.forEach((movie) => {
+  totalRating += movie.rating;
+});
+
+const average = totalRating / ratingAverage.length
+
+console.log(`Average Rating is ${average}`);
+
+
+/* 2. Count occurences
+Example Input: ['apple', 'banana', 'apple', 'cherry', 'apple', 'banana']
+Expected Output: { apple: 3, banana: 2, cherry: 1 } */
+
+const occurences = ['apple', 'banana', 'apple', 'cherry', 'apple', 'banana']
+
+const count = {}
+
+occurences.forEach((fruit) => {
+    if (count[fruit]) {
+        count[fruit]++
+    } else {
+        count[fruit] = 1;
+    }
 })
- 
+
+console.log(count)
+
+/* 3. Convert to uppercase
+Example Input: ['apple', 'banana', 'cherry']
+After execution, the original array should be: ['APPLE', 'BANANA', 'CHERRY'] */
+
+const upperCase = ['apple', 'banana', 'cherry']
+
+upperCase.forEach((word, index, array) => {
+    array[index] = word.toUpperCase()
+})
+
+console.log(upperCase)
